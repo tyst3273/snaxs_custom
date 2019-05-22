@@ -5,7 +5,7 @@ Created on Wed May 22 15:00:51 2019
 
 @author: ty
 
-For usage, run 'q2snaxs help'.
+For usage, run './q2snaxs help'.
 
 This program converts a FORCE_SETS file created by phonopy using the --qe 
 Quantum ESPRESSO calculator interface into one usable by SNAXS.
@@ -26,10 +26,10 @@ import numpy as np
 
 if len(sys.argv) == 1:
    sys.exit('\n\tUSAGE ERROR: qe2snaxs requires exactly 1 argument.\n'
-            '\tTry running \"qe2snaxs help\" to see options\n')
+            '\tTry running \"./qe2snaxs help\" to see options\n')
 elif len(sys.argv) > 2:
    sys.exit('\n\tUSAGE ERROR: qe2snaxs requires exactly 1 argument.\n'
-            '\tTry running \"qe2snaxs help\" to see options\n')
+            '\tTry running \"./qe2snaxs help\" to see options\n')
 elif sys.argv[1] == 'help':
    sys.exit('\n\tUSAGE: qe2snaxs infile\n\tinfile is the forcesets file produced '
             'by Quantum ESPRESSO.\n\tUnits are d = Bohr and F = '
