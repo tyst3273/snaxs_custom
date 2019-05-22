@@ -1,4 +1,4 @@
-function PAR=snaxs_ty(exp_name, calculation_path);
+function PAR=snaxsV2(exp_name, calculation_path);
 % PAR=snaxs(exp_name, calculation_path);
 %
 % SNAXS: Simulating Neutron And X-ray Scans
@@ -14,18 +14,13 @@ function PAR=snaxs_ty(exp_name, calculation_path);
 % This is basically just an intialization routine, which then calls the
 % main menu.  
 
-
-
-% %%	=== find DEFAULTS.m, initialize paths therein ===
-% if ~exist('DEFAULTS.m', 'file');
-% 	error( 'noDEFAULTS:FileNotFound', [' SNAXS can''t find "DEFAULTS.m"; this is a Bad Thing.\n' ...
-% 			'\t Make sure DEFAULTS.m is either in your working directory, your \n' ...
-% 			'\t system-specific MATLAB folder, or edit "snaxs.m" and use the \n' ...
-% 			'\t "addpath" function to include the folder containing DEFAULTS.m']);
-%         
-% end
-
+%% This links the script to the subroutines located elsewhere
 addpath('/home/ty/research/repos/snaxs/')
+
+%% This activates the conda environment that I installed phonopy into.
+%% phonopy broke some of my other packages so I used another env.
+%% Note that 'condalab' is a user developed package for matlab
+conda.setenv('phonopy')
 
 	% add subroutine path
 	subroutine_path = DEFAULTS('subroutine_path');
