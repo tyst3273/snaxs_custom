@@ -78,7 +78,7 @@ if isunix
 			warning('  Phonopy being called with YOUR code in EXP.phonopycode');
 			[status,result]=system(PAR.EXP.phonopycode);
 		else
-			[status,result]=system(['phonopy -q --eigenvectors QPOINTS']);
+			[status,result]=system([phonopy ' -q --eigenvectors QPOINTS']);
 		end
 
 

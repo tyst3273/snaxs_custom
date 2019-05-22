@@ -4,21 +4,21 @@ function output=DEFAULTS(request);
 %	=== CALCULATOR PATH ===
 %	This is the path to the calculator binary (anapert or phonopy)
 %anapert='0_subroutines/anapert.exe';
-phonopy='~/0_SNAXS/phonopy_files/phonopy.linux';
+phonopy='/home/ty/research/repos/snaxs/phonopy_files/phonopy.linux';
 
 
 % 	=== ResLib PATH ===
 %	path to the ResLib package by A. Zheludev (availble from ORNL).
-reslib_path='0_subroutines/ResLib/';
+reslib_path='/home/ty/research/repos/snaxs/0_subroutines/ResLib/';
 
 
 %	=== subroutine path ===
-subroutine_path='0_subroutines';
+subroutine_path='/home/ty/research/repos/snaxs/0_subroutines';
 
 
 %  === EXP path ===
 %	optional path to folder containing EXP files.
-exp_folder = '0_EXP_files';
+exp_folder = '/home/ty/research/repos/snaxs/0_EXP_files';
 
 
 %	=== PLOT ===
