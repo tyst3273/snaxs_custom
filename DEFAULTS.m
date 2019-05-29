@@ -3,7 +3,7 @@ function output=DEFAULTS(request);
 
 %	=== CALCULATOR PATH ===
 %	This is the path to the calculator binary (anapert or phonopy)
-%anapert='0_subroutines/anapert.exe';
+anapert='/home/ty/research/repos/snaxs/0_subroutines/anapert.exe';
 phonopy='/home/ty/research/repos/snaxs/phonopy_files/phonopy.linux';
 
 
@@ -41,7 +41,7 @@ exp_folder = '/home/ty/research/repos/snaxs/0_EXP_files';
 	INFO.degrees = 1;		% temperature
 	INFO.Q_squared = 1;		% include Q^2 if 1, set to 0 if not
 	INFO.one_ovr_omega=1;	% include 1/omega factor for scattering
-	INFO.bragg_handling= 0;	% if 1 set eng to 0.1meV, if 0 set height to 0
+	INFO.bragg_handling= 1; %0	% if 1 set eng to 0.1meV, if 0 set height to 0
 	INFO.kfki=1;			% include kf/ki factor
 
 	% === for energy-scan at fixed Q (all scans) ===
