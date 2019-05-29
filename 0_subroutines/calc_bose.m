@@ -41,7 +41,7 @@ end
 elast = find(energy == 0);
 if numel(elast > 0)
 	if gamma_handling == 1;
-		energy(elast)=.1;
+		energy(elast)=0.001 ; %.1;
 		bose(elast) = 1 + 1./ ( exp( meV_to_K * energy(elast)./degrees) -1);
 		if zero_flag ==0;
 			disp(' NOTE in "calc_bose.m" : Energy of zero was encountered.') 
