@@ -23,41 +23,48 @@ from shutil import copyfile as cp
 import os
 import sys
 import numpy as np
+infile = 'FORCE_SETS.template'
 
-if len(sys.argv) == 1:
-   sys.exit('\n\tUSAGE ERROR: qe2snaxs requires exactly 1 argument.\n'
-            '\tTry running \"./qe2snaxs help\" to see options\n')
-elif len(sys.argv) > 2:
-   sys.exit('\n\tUSAGE ERROR: qe2snaxs requires exactly 1 argument.\n'
-            '\tTry running \"./qe2snaxs help\" to see options\n')
-elif sys.argv[1] == 'help':
-   sys.exit('\n\tUSAGE: qe2snaxs infile\n\tinfile is the forcesets file produced '
-            'by Quantum ESPRESSO.\n\tUnits are d = Bohr and F = '
-            'Ry/Bohr. Output file \'FORCE_SETS\'\n\thas units d = Ang and F = '
-            'eV/Ang\n')
-
-infile = sys.argv[1]
-
-if not os.path.isfile(infile):
-   sys.exit('\n\tERROR: '+infile+' not found\n')
-if infile == 'FORCE_SETS' or os.path.isfile('FORCE_SETS'):
-   print('\n\tWARNING: This program overwrites \'FORCE_SETS\'\n\tBacking up '
-         '\'FORCE_SETS\' file to \'FORCE_SETS.bak\'\n')
-   cp('FORCE_SETS','FORCE_SETS.bak')
-   os.remove('FORCE_SETS')
-   if infile == 'FORCE_SETS':
-      infile = 'FORCE_SETS.bak'
+#if len(sys.argv) == 1:
+#   sys.exit('\n\tUSAGE ERROR: qe2snaxs requires exactly 1 argument.\n'
+#            '\tTry running \"./qe2snaxs help\" to see options\n')
+#elif len(sys.argv) > 2:
+#   sys.exit('\n\tUSAGE ERROR: qe2snaxs requires exactly 1 argument.\n'
+#            '\tTry running \"./qe2snaxs help\" to see options\n')
+#elif sys.argv[1] == 'help':
+#   sys.exit('\n\tUSAGE: qe2snaxs infile\n\tinfile is the forcesets file produced '
+#            'by Quantum ESPRESSO.\n\tUnits are d = Bohr and F = '
+#            'Ry/Bohr. Output file \'FORCE_SETS\'\n\thas units d = Ang and F = '
+#            'eV/Ang\n')
+#
+#infile = sys.argv[1]
+#
+#if not os.path.isfile(infile):
+#   sys.exit('\n\tERROR: '+infile+' not found\n')
+#if infile == 'FORCE_SETS' or os.path.isfile('FORCE_SETS'):
+#   print('\n\tWARNING: This program overwrites \'FORCE_SETS\'\n\tBacking up '
+#         '\'FORCE_SETS\' file to \'FORCE_SETS.bak\'\n')
+#   cp('FORCE_SETS','FORCE_SETS.bak')
+#   os.remove('FORCE_SETS')
+#   if infile == 'FORCE_SETS':
+#      infile = 'FORCE_SETS.bak'
       
-outfile = 'FORCE_SETS'
+outfile = 'FORCE_SETS' 
 
-nlines = sum(1 for lines in open(infile))
-ndat = nlines-5
 with open(outfile,'w') as w:
    with open(infile) as r:
-      for i in range(4):
-         w.write(r.readline())
-      tmp = np.array(r.readline().strip().split()).astype(float)*0.529177
-      w.write('\t{}\t{}\t{}\n'.format(tmp[0],tmp[1],tmp[2]))
-      for i in range(ndat):
-         tmp = np.array(r.readline().strip().split()).astype(float)*25.711043
-         w.write('\t{}\t{}\t{}\n'.format(tmp[0],tmp[1],tmp[2]))
+      tmp = r.readline()
+      nat = int(tmp.strip())  # number of atoms in each block of data
+      w.write(tmp)
+      tmp = r.readline()
+      ndisp = int(tmp.strip())   # number of block of data
+      w.write(tmp)
+      
+      for j in range(ndisp):  # loop over blocks of data
+         for i in range(2):   # skip the comment lines
+            w.write(r.readline())
+         tmp = np.array(r.readline().strip().split()).astype(float)*0.529177
+         w.write('\t{}\t{}\t{}\n'.format(tmp[0],tmp[1],tmp[2]))   # displacements
+         for i in range(nat): # loop over atoms in each block
+            tmp = np.array(r.readline().strip().split()).astype(float)*25.711043
+            w.write('\t{}\t{}\t{}\n'.format(tmp[0],tmp[1],tmp[2]))   # forces
