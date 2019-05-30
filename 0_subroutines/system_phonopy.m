@@ -65,7 +65,7 @@ if isunix
 		else
 			[status,result]=system(['phonopy  -q MP']);
 			system(['mv projected_dos.dat partial_dos.dat'])
-			%%% I added the above line! phonopy was out putting 'projected_dos.dat' but snaxs wants 'partial_dos.dat'. I just moved one into the other!
+%%	  	        I added the above line! phonopy was out putting 'projected_dos.dat' but snaxs wants 'partial_dos.dat'. I just moved one into the other!
 			disp('I made some changes to system_phonopy.m! look at line 67 if the results arent as expected!')
 		end
 

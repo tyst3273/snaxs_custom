@@ -48,8 +48,8 @@ exp_folder = '/home/ty/research/repos/snaxs/0_EXP_files';
 	INFO.Q = [ 0 3.85 0];	% Q-point
 	INFO.e_max= 100;			% also used for S(q,w) and dispersion plots
 	INFO.e_step= 0.1;
-	INFO.e_min=INFO.e_step;
-
+	INFO.e_min= INFO.e_step; 
+	
 	% === for S(q,w) & q-scan at fixed energy ===
 	INFO.Q_min = [0 0 0];		% starting Q for S(q,w), dispersion, Q-scans
 	INFO.Q_npts= 401;
