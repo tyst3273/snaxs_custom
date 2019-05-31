@@ -3,7 +3,7 @@ function output=DEFAULTS(request);
 
 %	=== CALCULATOR PATH ===
 %	This is the path to the calculator binary (anapert or phonopy)
-anapert='/home/ty/research/repos/snaxs/0_subroutines/anapert.exe';
+anapert='/home/ty/research/repos/snaxs/0_subroutines/anapert.linux';
 phonopy='/home/ty/research/repos/snaxs/phonopy_files/phonopy.linux';
 
 
