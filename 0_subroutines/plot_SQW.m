@@ -39,6 +39,7 @@ if PLOT.semilog
 	fh = imagesc(Q_array, eng, logdat, [mval-PLOT.decades mval] );
 else % plot linear
 	fh = imagesc(Q_array, eng, DATA.SQE_array);
+	colormap(hot)
 end
 axis on
 axis tight normal		% seems to be default in Matlab, useful in Octave

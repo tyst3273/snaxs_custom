@@ -37,8 +37,8 @@ exp_folder = '/home/ty/research/repos/snaxs/0_EXP_files';
 %	complex data such as Q-scans and S(q,w)
 
 	% === determining height (all scans) ===
-	INFO.bose = 1;			% include bose factor
-	INFO.degrees = 1;		% temperature
+	INFO.bose = 0;			% include bose factor
+	INFO.degrees = 5;		% temperature
 	INFO.Q_squared = 1;		% include Q^2 if 1, set to 0 if not
 	INFO.one_ovr_omega=1;	% include 1/omega factor for scattering
 	INFO.bragg_handling= 1; %0	% if 1 set eng to 0.1meV, if 0 set height to 0
