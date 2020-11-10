@@ -42,6 +42,7 @@ else % plot linear
 end
 axis on
 axis tight normal		% seems to be default in Matlab, useful in Octave
+colormap hot;
 fa=gca;
 
 % === plot NaNs in white on Matlab systems ===
