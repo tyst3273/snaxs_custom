@@ -44,9 +44,11 @@ if 1		%% === stable version ===
 		PAR=simulate_Escan(PAR);
 		SQE_array(:,k)=PAR.DATA.int;
 
+		
 		if ~isreal(PAR.DATA.int)
 			warning(['Imaginary data at index k=' num2str(k)]);
 		end
+
 	end
 
 	% these two lines are probably redundant/a bug
