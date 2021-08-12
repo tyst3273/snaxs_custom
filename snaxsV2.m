@@ -1,7 +1,7 @@
 function PAR=snaxsV2(exp_name, calculation_path);
 % PAR=snaxs(exp_name, calculation_path);
 %
-% SNAXS: Simulating Neutron And X-ray Scans
+% SNAXS: Simulating Neutron And X-rsay Scans
 % 	a CLI wrapper to anapert and phonopy
 % 	SNAXS was written by Dan Parshall: 
 % 	anapert was written by Rolf Heid
@@ -15,14 +15,14 @@ function PAR=snaxsV2(exp_name, calculation_path);
 % main menu.  
 
 %% This links the script to the subroutines located elsewhere
-addpath('/home/ty/research/repos/snaxs/')
+addpath('/home/ty/research/projects/snaxs/')
 
 %% This activates the conda environment that I installed phonopy into.
 %% phonopy broke some of my other packages so I used another env.
 %% Note that 'condalab' is a user developed package for matlab
 conda.setenv('phonopy')
 
-	% add subroutine path
+	% add subrouti5ne path
 	subroutine_path = DEFAULTS('subroutine_path');
 	if ~isempty(subroutine_path);
 		% if DEFAULTS returned a path, try i
@@ -118,5 +118,6 @@ PAR=user_main_menu(PAR);
 
 
 %% === CLEANUP WHEN CLOSING === (comment out this line to save output)
-%system_cleanup(PAR.XTAL.calc_method);
+% system_cleanup(PAR.XTAL.calc_method);
+
 

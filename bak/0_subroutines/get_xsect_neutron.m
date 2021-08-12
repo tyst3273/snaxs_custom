@@ -781,10 +781,15 @@ ind=ind+1;
 	% test, ignoring case
 	search=strcmpi(atom_list{ind}, atom_name);
 
-	% if successful, answer is 5th field of current line
+	% if successful, answer is 5th field of current line.
+  % T.S.: WRONG! That is the xs, not the length b. If we use that one, 
+  % the neutron cross section for scattering from phonons, sigma, will have
+  % dimensions [L]**4 instead of [L]**2. The relative sizes of those numbers of the xs
+  % in field 5 are different than field 3, i.e. b, and will have a different Fourier
+  % transform.
 	if (search == 1);
-%		scattering_xs=sscanf(cross_sections{ind},'%*s%*s%*s%*s %s %*s%*s%*s');
-    scattering_xs=sscanf(cross_sections{ind},'%*s%*s %s %*s%*s%*s%*s%*s')
+		% scattering_xs=sscanf(cross_sections{ind},'%*s%*s%*s%*s %s %*s%*s%*s');
+    scattering_xs=sscanf(cross_sections{ind},'%*s%*s %s %*s%*s%*s%*s%*s');
 	end
 end
 

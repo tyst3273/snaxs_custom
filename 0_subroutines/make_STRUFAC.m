@@ -79,7 +79,9 @@ for ind_at=1:N_atom
 
 	mass = [mass; get_mass(atom_kind{ind_at})];
 end
-fac=100/sum(scatt.^2./mass);
+
+%fac=100/sum(scatt.^2./mass);
+fac=10;
 
 
 %%%%%%%%%%
