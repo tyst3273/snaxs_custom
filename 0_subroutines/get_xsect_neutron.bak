@@ -782,9 +782,16 @@ ind=ind+1;
 	search=strcmpi(atom_list{ind}, atom_name);
 
 	% if successful, answer is 5th field of current line
+
+	% TY STERLING:
+	%	answer is actually the 3rd field. the b we want is the coherent scattering b. 
+	% 	see e.g. eq. 3.120 in Squire's. field 5 is the coherent xs. when xs is squared
+	% 	in make_STRUFACT, the result should have dims [L**2]. Using field 5, it has 
+	%	dims [L**4]
+
 	if (search == 1);
-%		scattering_xs=sscanf(cross_sections{ind},'%*s%*s%*s%*s %s %*s%*s%*s');
-    scattering_xs=sscanf(cross_sections{ind},'%*s%*s %s %*s%*s%*s%*s%*s')
+%		scattering_xs=sscanf(cross_sections{ind},'%*s%*s%*s%*s %s %*s%*s%*s'); % gets 5th field
+		scattering_xs=sscanf(cross_sections{ind},'%*s%*s %s %*s%*s%*s%*s%*s') % gets 2nd field
 	end
 end
 
