@@ -7,8 +7,9 @@ Qi = [0 -3 -6];
 Qf = [0 -3 -4];
 Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
-auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
-auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts);
+auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts);
+disp(' -----------------------------------------');
 
 % --------------------------------------------------------------------- 
 % 1 x -8
@@ -19,6 +20,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % 2 x -8
@@ -29,6 +31,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % -5 -6 x
@@ -39,6 +42,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % -6 -6 x
@@ -49,6 +53,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % 0 4 x
@@ -59,6 +64,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % 2 1 x
@@ -69,6 +75,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % -5 -3 x
@@ -79,6 +86,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % x 0 -8
@@ -89,6 +97,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % x 3 -9
@@ -99,6 +108,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % x -1 -8
@@ -109,6 +119,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % x -2 -6
@@ -119,6 +130,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % --------------------------------------------------------------------- 
 % x -3 -2
@@ -129,6 +141,7 @@ Qip = permute_Q(Qi);
 Qfp = permute_Q(Qf);
 auto_sqw(EXPtof_04_disordered,'Disordered',Qip,Qfp,Q_npts)
 auto_sqw(EXPtof_04_ordered,'Ordered',Qi,Qf,Q_npts)
+disp(' -----------------------------------------')
 
 % ---------------------------------------------------------------------
 

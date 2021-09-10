@@ -25,6 +25,7 @@ function auto_sqw(EXP_func,handle,Qiarr,Qfarr,Q_npts)
             '_H',num2str(Qf(1),'%2.2f'),'K',num2str(Qf(2),'%2.2f'),...
             'L',num2str(Qf(3),'%2.2f'),'.mat')
  
+        
         % this sets up the PAR struct that is passed into the snaxs
         % subroutines
         PAR=auto_PAR(EXP_func);
@@ -43,21 +44,24 @@ function auto_sqw(EXP_func,handle,Qiarr,Qfarr,Q_npts)
         PAR.INFO.kfki=0;           
 
         % these ARE used. they are the Q points in S(Q,w)
-        PAR.INFO.Qi=Qi;  
-        PAR.INFO.Qf=Qf;
+        PAR.INFO.Q_min=Qi;
+        PAR.INFO.Q_max=Qf;
         PAR.INFO.Q_npts=Q_npts;
 
         % this gets the structure factors
         PAR=simulate_SQW(PAR);
-
+ 
         % this gets the data from the struct
         e=PAR.VECS.energies;
         s=PAR.VECS.strufac;
-
+        q=PAR.VECS.Q_points;
+        
+        disp(q)
+        
         % and saves it willy nilly
-        save(out_file,'e','s');
-
-        clearvars PAR XTAL EXP INFO PLOT DATA VECS e s
+        save(out_file,'e','s','q');
+%
+%         clearvars PAR XTAL EXP INFO PLOT DATA VECS e s
 
     end
     

@@ -791,7 +791,7 @@ ind=ind+1;
 
 	if (search == 1);
 %		scattering_xs=sscanf(cross_sections{ind},'%*s%*s%*s%*s %s %*s%*s%*s'); % gets 5th field
-		scattering_xs=sscanf(cross_sections{ind},'%*s%*s %s %*s%*s%*s%*s%*s') % gets 2nd field
+		scattering_xs=sscanf(cross_sections{ind},'%*s%*s %s %*s%*s%*s%*s%*s'); % gets 2nd field
 	end
 end
 
